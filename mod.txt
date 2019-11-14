@@ -1,0 +1,32 @@
+{
+	"name": "Greed Stats",
+	"description": "Optimize your runs by saving relevant data",
+	"author": "zessirb",
+	"contact": "zessirb@gmail.com",
+	"version": "0.1",
+	"hooks": [
+		{
+			"hook_id": "lib/managers/experiencemanager",
+			"script_path": "scripts/RegisterStats.lua"
+		},
+		{
+			"hook_id": "lib/managers/moneymanager",
+			"script_path": "scripts/RegisterStats.lua"
+		},
+		{
+			"hook_id": "lib/states/bootupstate",
+			"script_path": "scripts/PersistenceHandler.lua"
+		}
+	],
+	"keybinds": [
+		{
+			"keybind_id": "keybind_greedpanel",
+			"name": "Greed Stats panel toggle",
+			"description": "Open the Greed Stats panel",
+			"script_path": "scripts/GreedSummary.lua",
+			"run_in_menu": true,
+			"run_in_game": true,
+			"localized": false
+		}
+	]
+}
