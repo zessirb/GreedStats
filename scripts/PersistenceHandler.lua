@@ -15,6 +15,7 @@ if RequiredScript == "lib/states/bootupstate" then
     end)
 end
 
+--  Fetch stats in file
 Hooks:RegisterHook("readGreedStatsHook")
 Hooks:AddHook("readGreedStatsHook", "readGreedStats", function ()
     local file = io.open("greed_stats_persistence.txt", "r+")
@@ -24,6 +25,7 @@ Hooks:AddHook("readGreedStatsHook", "readGreedStats", function ()
     return data
 end)
 
+--  Insert any kind of stats
 local function insertGreedStatsData(job_id, dataTable)
     log("[greed_stats] Inserting " .. json.encode(dataTable))
     --    Reading data file
@@ -49,13 +51,18 @@ local function insertGreedStatsData(job_id, dataTable)
     file:close()
 end
 
+--  Add money data
 Hooks:RegisterHook("insertMoneyDataHook")
 Hooks:AddHook("insertMoneyDataHook", "insertMoneyData", function (job_id, money, heist_timer, difficulty, num_winners)
+    log("insertMoneyDataHook begin")
     insertGreedStatsData(job_id, { total_cash=money, timer=heist_timer, difficulty=difficulty, team_size=num_winners })
+    log("insertMoneyDataHook end")
 end)
 
+--  Add XP data
 Hooks:RegisterHook("insertXpDataHook")
 Hooks:AddHook("insertXpDataHook", "insertXpData", function (job_id, xp, heist_timer, difficulty, num_winners)
+    log("insertXpDataHook begin")
     insertGreedStatsData(job_id, { total_xp=xp, timer=heist_timer, difficulty=difficulty, team_size=num_winners })
+    log("insertXpDataHook end")
 end)
-Hooks:RegisterHook("insertXpData")

@@ -3,7 +3,10 @@
 	"description": "Optimize your runs by saving relevant data",
 	"author": "zessirb",
 	"contact": "zessirb@gmail.com",
+	"image": "mod.png",
 	"version": "0.1",
+	"color": "63 197 240",
+	"blt_version": 2,
 	"hooks": [
 		{
 			"hook_id": "lib/managers/experiencemanager",
