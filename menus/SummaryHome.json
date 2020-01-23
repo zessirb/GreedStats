@@ -1,0 +1,14 @@
+{
+	"menu_id" : "summary_home",
+	"title" : "Greed Stats Summary",
+	"description" : "Select a heist to see data about it",
+    "items": [
+        {
+            "type": "button",
+            "id": "summary_home_exit",
+            "title": "Exit",
+            "description": "Close Greed Stats window",
+            "is_cancel_button": true
+        }
+    ]
+}

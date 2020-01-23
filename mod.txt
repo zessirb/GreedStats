@@ -7,19 +7,12 @@
 	"version": "0.1",
 	"color": "63 197 240",
 	"blt_version": 2,
+    "persist_scripts": [
+        { "global": "PersistenceHandler", "script_path": "scripts/PersistenceHandler.lua" }
+    ],
 	"hooks": [
-		{
-			"hook_id": "lib/managers/experiencemanager",
-			"script_path": "scripts/RegisterStats.lua"
-		},
-		{
-			"hook_id": "lib/managers/moneymanager",
-			"script_path": "scripts/RegisterStats.lua"
-		},
-		{
-			"hook_id": "lib/states/bootupstate",
-			"script_path": "scripts/PersistenceHandler.lua"
-		}
+        { "hook_id": "lib/managers/menumanager", "script_path": "scripts/GreedSummary.lua" },
+		{ "hook_id": "lib/states/missionendstate", "script_path": "scripts/InterceptStats.lua" }
 	],
 	"keybinds": [
 		{
